@@ -1,7 +1,9 @@
 import Head from "next/head";
+import Button from "../components/Button";
 // import styles from "../styles/Home.module.css";
-import Link from "next/link";
-import { useRouter } from "next/router";
+// import Link from "next/link";
+// import { useRouter } from "next/router";
+import { color } from "../styles/theme";
 import AppLayout from "../ui";
 
 export default function Home() {
@@ -13,11 +15,34 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AppLayout>
-        <h1>Dev</h1>
-        <Link href="/timeline">
-          <a>Timeline</a>
-        </Link>
+        <section>
+          <img src="/cat.svg" alt="logo" />
+          <h1>DevWer</h1>
+          <h2>App for developer and client</h2>
+          <Button>😻 Login with Github 😻</Button>
+        </section>
       </AppLayout>
+      <style jsx>{`
+        section {
+          height: 100%;
+          display: grid;
+          place-content: center;
+          place-items: center;
+        }
+        img {
+          display: block;
+          width: 100%;
+          max-width: 100px;
+          margin-bottom: 0.5rem;
+        }
+        h2 {
+          font-size: 2.45rem;
+          margin: 0;
+          margin-bottom: 1.6rem;
+
+          color: ${color.primaryOpacity};
+        }
+      `}</style>
     </>
   );
 }
